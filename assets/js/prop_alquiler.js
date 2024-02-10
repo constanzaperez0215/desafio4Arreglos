@@ -65,7 +65,7 @@ let path = window.location.pathname
 let page = path.split("/").pop()
 
 for (let dato of propiedades_alquiler) {
-    if(page === "desafio4Arreglos/"){
+    if(page === "desafio4Arreglos/ || page ==="index.html""){
         if(index2==3){
             break
         }
