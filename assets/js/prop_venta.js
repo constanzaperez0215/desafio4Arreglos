@@ -79,7 +79,7 @@ let page2 = path2.split("/").pop()
 
 for (let dato of propiedades_venta) {
 
-    if(page2 === "desafio4Arreglos/" || page2 ==="index.html"){
+    if(page2 === "index.html"){
         if(index==3){
             break
         }
