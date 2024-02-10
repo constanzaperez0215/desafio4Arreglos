@@ -42,15 +42,48 @@ const propiedades_venta = [
         costo: 3000,
         smoke: false,
         pets: true
+    },
+    {
+        nombre: 'Apartamento con vista al mar',
+        src: 'https://s7d9.scene7.com/is/image/aimcoprod/Yacht-Club-at-Brickell-St-Tropez-Balcony_01?qlt=100&fmt=jpg',
+        descripcion: 'Luminoso apartamento hubicado en las costa de Miami',
+        ubicacion: '709. st. Tropez',
+        habitaciones: 2,
+        baños: 2,
+        costo: 3500,
+        smoke: true,
+        pets: false
+    },
+{
+        nombre: 'Complejo Casa María',
+        src: 'https://www.forbesglobalproperties.com/wp-content/uploads/2024/02/1-PRIMARY.jpg',
+        descripcion: 'Casa María es perfecta para el comprador exigente que desea un oasis de tranquilidad a solo minutos del corazón de San Miguel de Allende.',
+        ubicacion: '3 Membrillo, Jalpa ',
+        habitaciones: 3,
+        baños:2,
+        costo: 1300000,
+        smoke: true,
+        pets: true
     }
+
 ]
 
 const info_ventas = document.querySelector("#prop-ventas")
 
 let template_ventas = ''
+let index = 0
+
+let path2 =window.location.pathname
+let page2 = path2.split("/").pop()
 
 
 for (let dato of propiedades_venta) {
+
+    if(page2 === "index.html"){
+        if(index==3){
+            break
+        }
+    }
 
     let fumar = ''
 
@@ -104,7 +137,9 @@ for (let dato of propiedades_venta) {
         </div>
     </div>
 
-`}
+`
+index++
+}
 
 info_ventas.innerHTML= template_ventas
 

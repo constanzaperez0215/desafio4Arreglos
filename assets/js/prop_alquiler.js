@@ -32,24 +32,44 @@ const propiedades_alquiler = [
         smoke: false,
         pets: false
     },
-    // {
-    //     nombre: '',
-    //     src: '',
-    //     descripcion: '',
-    //     ubicacion: '',
-    //     habitaciones: 0,
-    //     costo: 0,
-    //     smoke: false,
-    //     pets: true
-    // }
+    {
+        nombre: 'Lujo y armonía: vivienda de obra nueva con piscina',
+        src: 'https://www.forbesglobalproperties.com/wp-content/uploads/2024/02/84102579-20240209000000-1-69677509465bd7425b40d89.74549305_3840.webp-original-579011-1707535002.jpg',
+        descripcion: 'El refugio perfecto para escapar del ajetreo y el bullicio de la vida cotidiana y disfrutar de la paz y el idilio.',
+        ubicacion: 'Hermatswil, Zürich, 8330, Suiza',
+        habitaciones: 4,
+        baños: 3,
+        costo: 3000,
+        smoke: false,
+        pets: true
+    },
+    {
+        nombre: '19 Rockstream Drive',
+        src: 'https://www.forbesglobalproperties.com/wp-content/uploads/2024/02/19rockstreamdrive-100-768x512.jpg',
+        descripcion: 'Una obra maestra del lujo moderno y una casa escaparate recién terminada que revela majestuosas vistas del Strip de Las Vegas y más allá desde cada rincón.',
+        ubicacion: 'Henderson, Nevada, 89012, Estados Unidos',
+        habitaciones: 5,
+        baños: 3,
+        costo: 4000,
+        smoke: true,
+        pets: false
+    }
 ]
 
 const info_alquiler = document.querySelector("#prop-alquiler")
 
 let html_alquiler = ''
+let index2 = 0
 
+let path = window.location.pathname
+let page = path.split("/").pop()
 
 for (let dato of propiedades_alquiler) {
+    if(page === "index.html"){
+        if(index2==3){
+            break
+        }
+    }
 
     let fumar = ''
 
@@ -103,6 +123,8 @@ for (let dato of propiedades_alquiler) {
         </div>
     </div>
 
-`}
+`
+index2++
+}
 
 info_alquiler.innerHTML = html_alquiler
